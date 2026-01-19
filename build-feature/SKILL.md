@@ -13,7 +13,7 @@ Autonomous task execution loop that implements tasks one by one until complete.
 
 **Each task must be completable in ONE iteration (~one context window).**
 
-Each iteration spawns a fresh Amp instance with no memory of previous work. If a task is too big, the LLM runs out of context before finishing.
+Each iteration spawns a fresh Codex instance with no memory of previous work. If a task is too big, the LLM runs out of context before finishing.
 
 ### Right-sized tasks:
 - Add a database column + migration
@@ -78,7 +78,7 @@ Starting from the parent task ID, collect all tasks that are descendants:
 **Step 3: Filter to workable tasks**
 From the descendant set, select tasks that are:
 - `ready: true` (all dependencies satisfied)
-- `status: "open"` 
+- `status: "open"`
 - Leaf tasks (no children of their own) - these are the actual work items
 
 **CRITICAL:** Skip container tasks that exist only to group other tasks. A container task has other tasks with its ID as their `parentID`.
@@ -175,7 +175,7 @@ Parent Task: [parent-task-id]
 ---
 
 ## [Date] - [Task Title]
-Thread: https://ampcode.com/threads/[thread-id]
+Thread: [current session reference]
 Task ID: [id]
 - What was implemented
 - Files changed
