@@ -1,6 +1,6 @@
-# Lightweight Programmatic SEO Ops Setup Guide
+# Programmatic SEO Ops Setup Guide
 
-This guide describes a simple SEO operations workflow that works for most websites without requiring paid SEO tools or analytics API setup.
+This guide describes a programmatic SEO operations workflow for setting up, auditing, planning, and expanding a website’s organic search presence.
 
 ## Goal
 
@@ -13,11 +13,9 @@ The system should answer four questions:
 3. Which pages or tools should be created next?
 4. Is the site publishing and improving consistently?
 
-## Minimum Setup
+## SEO Foundation
 
-The minimum setup should work without Google Analytics, Ahrefs, DataForSEO, Semrush, or backlink tools.
-
-You need:
+Start with:
 
 - A live website.
 - A public `robots.txt` file.
@@ -25,7 +23,7 @@ You need:
 - Indexable public pages.
 - Useful page titles and meta descriptions.
 - Canonical URLs.
-- A simple content or tool-building plan.
+- A content or tool-building plan.
 
 ## Google Search Console Recommendation
 
@@ -40,11 +38,11 @@ Manual setup:
 5. Submit the sitemap URL, usually `https://example.com/sitemap.xml`.
 6. Use URL Inspection to request indexing for the homepage and highest-priority pages.
 
-This is enough for most users. API access is optional.
+This gives Google a clear path to discover and evaluate the site. API access is optional.
 
 ## Optional Advanced GSC API
 
-Only add GSC API automation if the user wants reporting inside a local dashboard.
+Add GSC API automation when the user wants Search Console reporting inside a local dashboard.
 
 With GSC API connected, a dashboard can show:
 
@@ -55,26 +53,11 @@ With GSC API connected, a dashboard can show:
 - Average position.
 - Indexing or inspection status, where available.
 
-Without GSC API, the dashboard should show a manual checklist instead of fake zeros.
-
-## What Not To Include By Default
-
-Do not include these in the public setup unless the user explicitly asks:
-
-- GA4.
-- Ahrefs.
-- Domain Rating.
-- Backlink counts.
-- DataForSEO.
-- Semrush.
-- App Store Connect.
-- Paid SEO provider assumptions.
-
-These can be internal or advanced workflows, but they make the public setup harder than necessary.
+Without GSC API, the dashboard should show a manual checklist and clearly mark automated reporting as not connected.
 
 ## Dashboard Sections
 
-A useful lightweight dashboard can include:
+A useful SEO dashboard can include:
 
 - Overview: technical status, sitemap URL count, clean URL count, content/tool queue.
 - Search Console: manual setup checklist, or API data if connected.
@@ -128,4 +111,3 @@ Use precise labels:
 - `Manual step`: the user needs to do something in an external dashboard.
 - `No data yet`: the source is connected, but no rows are available.
 - `0`: only use this when a connected source returned a real zero.
-

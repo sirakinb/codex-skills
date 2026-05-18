@@ -18,7 +18,7 @@ function absolute(pathname) {
 
 async function fetchText(url) {
   const response = await fetch(url, {
-    headers: { "user-agent": "seo-ops-lite/1.0" },
+    headers: { "user-agent": "seo-ops/1.0" },
   });
   return {
     ok: response.ok,
@@ -109,4 +109,3 @@ try {
 }
 
 console.log(JSON.stringify(result, null, 2));
-

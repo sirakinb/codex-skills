@@ -1,22 +1,22 @@
 ---
-name: seo-ops-lite
-description: Set up lightweight programmatic SEO operations for a website: sitemap and robots checks, metadata/canonical auditing, Google Search Console sitemap guidance, a 90-day SEO plan, and optional build automation. Use when users want SEO ops without requiring GA4, Ahrefs, DataForSEO, Semrush, or backlink metrics.
+name: seo-ops
+description: Set up programmatic SEO operations for a website: sitemap and robots checks, metadata/canonical auditing, Google Search Console sitemap guidance, a 90-day SEO plan, content or tool planning, and optional build automation.
 metadata:
-  short-description: Lightweight SEO ops setup
+  short-description: Programmatic SEO ops setup
 ---
 
-# SEO Ops Lite
+# SEO Ops
 
-Use this skill to set up a practical SEO operations system for a site without forcing analytics or paid SEO tools.
+Use this skill to set up a practical SEO operations system for a website.
 
 ## Principles
 
-- Keep the minimum setup simple: live site, `robots.txt`, `sitemap.xml`, page metadata, canonical tags, and a plan.
+- Start with the SEO foundation: live site, `robots.txt`, `sitemap.xml`, page metadata, canonical tags, and a plan.
 - Recommend Google Search Console manually: add the property, submit the sitemap, and request indexing for priority pages.
-- Treat GSC API as optional advanced reporting only.
-- Do not require or mention GA4, Ahrefs, DataForSEO, Semrush, App Store Connect, backlink exchanges, domain rating, or paid SEO provider dashboards unless the user explicitly asks.
+- Treat GSC API as an advanced reporting option when the user wants automated Search Console data.
+- Keep metrics source-backed. If a source is not connected, label it `Not connected`, `Manual step`, or `Unknown`.
 - Never invent SEO metrics. If a source is not connected, label it `Not connected`, `Manual step`, or `Unknown`.
-- Prefer static/generated dashboards that work before APIs are connected.
+- Build dashboards and plans that remain useful before APIs are connected.
 
 ## Workflow
 
@@ -25,10 +25,10 @@ Use this skill to set up a practical SEO operations system for a site without fo
    - `robots.txt` exists and allows public pages.
    - `sitemap.xml` exists and lists canonical public URLs.
    - Important pages have title, meta description, one H1, canonical URL, and indexable status.
-3. Generate or update a lightweight dashboard:
+3. Generate or update an SEO dashboard:
    - show sitemap URL count, clean URL count, missing titles/descriptions, canonical warnings, and tool/content queue status.
    - show GSC as a manual setup checklist unless the user has explicitly connected the GSC API.
-4. Create a simple SEO plan:
+4. Create an SEO plan:
    - first 30 days: technical foundation, sitemap submission, initial tool/content targets.
    - days 31-60: publish tools/pages at a sane cadence, improve internal linking.
    - days 61-90: refresh weak pages, expand winning topics, monitor Search Console.
@@ -40,7 +40,7 @@ Use this skill to set up a practical SEO operations system for a site without fo
 Use `scripts/check-seo-foundation.mjs` for a quick public-site audit:
 
 ```bash
-node path/to/seo-ops-lite/scripts/check-seo-foundation.mjs https://example.com
+node path/to/seo-ops/scripts/check-seo-foundation.mjs https://example.com
 ```
 
 It checks `robots.txt`, `sitemap.xml`, and a sample of URLs from the sitemap, then prints JSON. Use it as a starting point, not as a complete crawler.
@@ -48,4 +48,3 @@ It checks `robots.txt`, `sitemap.xml`, and a sample of URLs from the sitemap, th
 ## References
 
 Read `references/setup-guide.md` when the user asks for a guide, wants to understand the process, or needs Google Search Console setup instructions.
-

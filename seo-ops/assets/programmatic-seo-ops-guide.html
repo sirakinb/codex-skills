@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Lightweight Programmatic SEO Ops Setup Guide</title>
+  <title>Programmatic SEO Ops Setup Guide</title>
   <style>
     body { font-family: Arial, sans-serif; color: #111; line-height: 1.45; }
     h1 { font-size: 28px; margin-bottom: 8px; }
@@ -16,8 +16,8 @@
   </style>
 </head>
 <body>
-  <h1>Lightweight Programmatic SEO Ops Setup Guide</h1>
-  <p>This guide explains how to set up a simple SEO operations system for a website. It intentionally avoids paid SEO tools and unnecessary analytics integrations. The default recommendation is Google Search Console sitemap submission, not a complex analytics stack.</p>
+  <h1>Programmatic SEO Ops Setup Guide</h1>
+  <p>This guide explains how to set up an SEO operations system for a website: technical foundation, Google Search Console setup, dashboard reporting, planning, and a content or tool-building queue.</p>
 
   <h2>1. What This System Does</h2>
   <p>The goal is to create a repeatable SEO operating system that helps a website get crawled, indexed, improved, and expanded over time.</p>
@@ -30,8 +30,8 @@
     <li>Optionally adds automation for scheduled tool/page builds.</li>
   </ul>
 
-  <h2>2. Minimum Setup</h2>
-  <p>The minimum version should work for almost any live site.</p>
+  <h2>2. SEO Foundation</h2>
+  <p>Start with the core pieces search engines use to discover, crawl, and understand the site.</p>
   <ul>
     <li>A live website.</li>
     <li>A public <code>robots.txt</code> file.</li>
@@ -39,7 +39,7 @@
     <li>Indexable public pages.</li>
     <li>Useful titles and meta descriptions.</li>
     <li>Canonical URLs.</li>
-    <li>A simple 90-day plan and build queue.</li>
+    <li>A 90-day plan and build queue.</li>
   </ul>
 
   <h2>3. Recommended Google Search Console Setup</h2>
@@ -52,24 +52,14 @@
     <li>Submit the sitemap URL, usually <code>https://example.com/sitemap.xml</code>.</li>
     <li>Use URL Inspection to request indexing for the homepage and priority pages.</li>
   </ol>
-  <p>This is enough for most users. They do not need Google Analytics, Ahrefs, DataForSEO, Semrush, or backlink metrics to start.</p>
+  <p>This gives Google a clear path to discover and evaluate the site. API access is optional.</p>
 
   <h2>4. Optional Advanced GSC API</h2>
-  <p>The Google Search Console API is optional. Use it only if the user wants local automated reporting.</p>
+  <p>The Google Search Console API is useful when the user wants local automated reporting.</p>
   <p>With GSC API connected, a dashboard can show queries, pages, clicks, impressions, average position, and indexing status where available.</p>
-  <p>Without GSC API, the dashboard should show a setup checklist. It should not show fake zeros.</p>
+  <p>Without GSC API, the dashboard should show a setup checklist and clearly mark automated reporting as not connected.</p>
 
-  <h2>5. What To Leave Out By Default</h2>
-  <table>
-    <tr><th>Tool or Metric</th><th>Default Decision</th><th>Reason</th></tr>
-    <tr><td>Google Analytics</td><td>Leave out</td><td>Useful for behavior analytics, but not required for indexing or SEO setup.</td></tr>
-    <tr><td>Ahrefs / Domain Rating</td><td>Leave out</td><td>Requires account/API and should not be shown unless truly connected.</td></tr>
-    <tr><td>DataForSEO</td><td>Leave out</td><td>Useful internally for keyword research, but too advanced for the public setup.</td></tr>
-    <tr><td>Backlink counts</td><td>Leave out</td><td>Should never be displayed unless verified from a real connected source.</td></tr>
-    <tr><td>Semrush</td><td>Leave out</td><td>Optional paid workflow, not required for setup.</td></tr>
-  </table>
-
-  <h2>6. Dashboard Structure</h2>
+  <h2>5. Dashboard Structure</h2>
   <ul>
     <li><strong>Overview:</strong> sitemap URLs, clean URLs, indexed or manually submitted pages, build queue status.</li>
     <li><strong>Search Console:</strong> manual setup checklist by default; API data only if connected.</li>
@@ -78,7 +68,7 @@
     <li><strong>Plan:</strong> 30/60/90-day roadmap.</li>
   </ul>
 
-  <h2>7. 90-Day SEO Plan</h2>
+  <h2>6. 90-Day SEO Plan</h2>
   <h3>Days 1-30: Foundation</h3>
   <ul>
     <li>Confirm <code>robots.txt</code> and <code>sitemap.xml</code>.</li>
@@ -104,7 +94,7 @@
     <li>Keep publishing cadence steady.</li>
   </ul>
 
-  <h2>8. Automation Rules</h2>
+  <h2>7. Automation Rules</h2>
   <p>Automation should be optional and transparent.</p>
   <ol>
     <li>Maintain a queue of tools or pages to build.</li>
@@ -115,7 +105,7 @@
   </ol>
   <p>Avoid publishing large numbers of pages at once. A steady cadence is safer and easier to review.</p>
 
-  <h2>9. Reporting Language</h2>
+  <h2>8. Reporting Language</h2>
   <table>
     <tr><th>Label</th><th>Meaning</th></tr>
     <tr><td>Not connected</td><td>An API or external source is not configured.</td></tr>
