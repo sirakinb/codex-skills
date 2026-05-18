@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Lightweight Programmatic SEO Ops Setup Guide</title>
+  <style>
+    body { font-family: Arial, sans-serif; color: #111; line-height: 1.45; }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    h2 { font-size: 20px; margin-top: 28px; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
+    h3 { font-size: 16px; margin-top: 18px; }
+    p, li { font-size: 11pt; }
+    code { font-family: Menlo, Consolas, monospace; background: #f4f4f4; padding: 1px 3px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+    th, td { border: 1px solid #ccc; padding: 7px; vertical-align: top; font-size: 10.5pt; }
+    th { background: #f1f1f1; }
+  </style>
+</head>
+<body>
+  <h1>Lightweight Programmatic SEO Ops Setup Guide</h1>
+  <p>This guide explains how to set up a simple SEO operations system for a website. It intentionally avoids paid SEO tools and unnecessary analytics integrations. The default recommendation is Google Search Console sitemap submission, not a complex analytics stack.</p>
+
+  <h2>1. What This System Does</h2>
+  <p>The goal is to create a repeatable SEO operating system that helps a website get crawled, indexed, improved, and expanded over time.</p>
+  <ul>
+    <li>Checks whether search engines can crawl the site.</li>
+    <li>Confirms that <code>robots.txt</code> and <code>sitemap.xml</code> exist.</li>
+    <li>Audits page titles, meta descriptions, canonical URLs, and indexability.</li>
+    <li>Creates a 90-day SEO plan.</li>
+    <li>Creates a content or tool-building queue.</li>
+    <li>Optionally adds automation for scheduled tool/page builds.</li>
+  </ul>
+
+  <h2>2. Minimum Setup</h2>
+  <p>The minimum version should work for almost any live site.</p>
+  <ul>
+    <li>A live website.</li>
+    <li>A public <code>robots.txt</code> file.</li>
+    <li>A public <code>sitemap.xml</code> file.</li>
+    <li>Indexable public pages.</li>
+    <li>Useful titles and meta descriptions.</li>
+    <li>Canonical URLs.</li>
+    <li>A simple 90-day plan and build queue.</li>
+  </ul>
+
+  <h2>3. Recommended Google Search Console Setup</h2>
+  <p>Google Search Console is the only external platform that should be recommended by default.</p>
+  <ol>
+    <li>Go to Google Search Console.</li>
+    <li>Add the website as a property.</li>
+    <li>Verify ownership using the easiest method for the site.</li>
+    <li>Open the Sitemaps section.</li>
+    <li>Submit the sitemap URL, usually <code>https://example.com/sitemap.xml</code>.</li>
+    <li>Use URL Inspection to request indexing for the homepage and priority pages.</li>
+  </ol>
+  <p>This is enough for most users. They do not need Google Analytics, Ahrefs, DataForSEO, Semrush, or backlink metrics to start.</p>
+
+  <h2>4. Optional Advanced GSC API</h2>
+  <p>The Google Search Console API is optional. Use it only if the user wants local automated reporting.</p>
+  <p>With GSC API connected, a dashboard can show queries, pages, clicks, impressions, average position, and indexing status where available.</p>
+  <p>Without GSC API, the dashboard should show a setup checklist. It should not show fake zeros.</p>
+
+  <h2>5. What To Leave Out By Default</h2>
+  <table>
+    <tr><th>Tool or Metric</th><th>Default Decision</th><th>Reason</th></tr>
+    <tr><td>Google Analytics</td><td>Leave out</td><td>Useful for behavior analytics, but not required for indexing or SEO setup.</td></tr>
+    <tr><td>Ahrefs / Domain Rating</td><td>Leave out</td><td>Requires account/API and should not be shown unless truly connected.</td></tr>
+    <tr><td>DataForSEO</td><td>Leave out</td><td>Useful internally for keyword research, but too advanced for the public setup.</td></tr>
+    <tr><td>Backlink counts</td><td>Leave out</td><td>Should never be displayed unless verified from a real connected source.</td></tr>
+    <tr><td>Semrush</td><td>Leave out</td><td>Optional paid workflow, not required for setup.</td></tr>
+  </table>
+
+  <h2>6. Dashboard Structure</h2>
+  <ul>
+    <li><strong>Overview:</strong> sitemap URLs, clean URLs, indexed or manually submitted pages, build queue status.</li>
+    <li><strong>Search Console:</strong> manual setup checklist by default; API data only if connected.</li>
+    <li><strong>Technical URLs:</strong> status code, canonical status, title, description, H1, noindex.</li>
+    <li><strong>Tool Builder:</strong> queued tools/pages, next item, cron status if enabled.</li>
+    <li><strong>Plan:</strong> 30/60/90-day roadmap.</li>
+  </ul>
+
+  <h2>7. 90-Day SEO Plan</h2>
+  <h3>Days 1-30: Foundation</h3>
+  <ul>
+    <li>Confirm <code>robots.txt</code> and <code>sitemap.xml</code>.</li>
+    <li>Submit the sitemap in Google Search Console.</li>
+    <li>Request indexing for priority pages.</li>
+    <li>Clean weak titles and meta descriptions.</li>
+    <li>Pick the first 3-5 tools or pages to build.</li>
+  </ul>
+
+  <h3>Days 31-60: Build</h3>
+  <ul>
+    <li>Publish tools or pages at a consistent cadence.</li>
+    <li>Add internal links from related pages.</li>
+    <li>Improve thin pages and unclear headings.</li>
+    <li>Check GSC manually for first impressions and indexed pages.</li>
+  </ul>
+
+  <h3>Days 61-90: Improve</h3>
+  <ul>
+    <li>Expand topics that start earning impressions.</li>
+    <li>Refresh pages that are indexed but not earning clicks.</li>
+    <li>Add supporting pages around winning tools or service pages.</li>
+    <li>Keep publishing cadence steady.</li>
+  </ul>
+
+  <h2>8. Automation Rules</h2>
+  <p>Automation should be optional and transparent.</p>
+  <ol>
+    <li>Maintain a queue of tools or pages to build.</li>
+    <li>Generate one item per scheduled run.</li>
+    <li>Run checks and builds.</li>
+    <li>Commit only if checks pass.</li>
+    <li>Push automatically only if the user explicitly asked for unattended publishing.</li>
+  </ol>
+  <p>Avoid publishing large numbers of pages at once. A steady cadence is safer and easier to review.</p>
+
+  <h2>9. Reporting Language</h2>
+  <table>
+    <tr><th>Label</th><th>Meaning</th></tr>
+    <tr><td>Not connected</td><td>An API or external source is not configured.</td></tr>
+    <tr><td>Manual step</td><td>The user needs to complete an action in an external dashboard.</td></tr>
+    <tr><td>No data yet</td><td>The source is connected, but returned no rows.</td></tr>
+    <tr><td>0</td><td>A connected source returned a real zero.</td></tr>
+  </table>
+</body>
+</html>
